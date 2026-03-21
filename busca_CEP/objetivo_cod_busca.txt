@@ -1,0 +1,4 @@
+Esse código tem o objetivo de busca o endereço de um determinado cep dado pelo usuário:
+
+O arquivo cep_ordenado.dat original era muito grande, por isso foi substituído por uma versão  reduzida com os endereços do Rio de Janeiro chamado cep_rj_ordenado.dat
+
