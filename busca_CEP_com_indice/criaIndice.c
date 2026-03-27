@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
     printf("Tamanho da Estrutura: %ld\n\n", sizeof(Endereco));
 
     // Abre arquivo de dados
-    f = fopen("cep_rj.dat", "rb");
+    f = fopen("../dados/cep_rj.dat", "rb");
     if (f == NULL) {
         printf("Erro ao abrir cep_rj.dat\n");
         return 1;
@@ -78,11 +78,11 @@ int main(int argc, char **argv) {
     qsort(a, tamanhoRegistros, sizeof(indiceEndereco), compara);
 
     // Debug: imprime os 10 primeiros
-    printf("Os 10 primeiros CEPs e suas posicoes abaixo: \n\n");
+    printf("Os 10 primeiros CEPs do indice.dat e suas posicoes em cep_rj.dat abaixo: \n\n");
     for (int j = 0; j < 10 && j < tamanhoRegistros; j++) {
         printf("%.8s | %d\n", a[j].cep, a[j].posicao);
     }
-    printf("salva em indice.dat");
+    printf("salva em indice.dat\n");
     // Salva o índice em arquivo
     s = fopen("indice.dat", "wb");
     if (s == NULL) {

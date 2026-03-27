@@ -82,7 +82,7 @@ int main(int argc, char **argv) {
     }
 
     // Acesso direto ao arquivo original
-    FILE *fd = fopen("cep_rj.dat", "rb");
+    FILE *fd = fopen("../dados/cep_rj.dat", "rb");
     if (fd == NULL) {
         printf("Erro ao abrir cep.dat\n");
         return 1;

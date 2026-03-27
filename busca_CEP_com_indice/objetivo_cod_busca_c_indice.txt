@@ -1,0 +1,5 @@
+Esse código tem o objetivo de busca o endereço de um determinado cep dado pelo usuário através de um arquivo de índice:
+
+Nesse código você recebe um cep_rj.dat que está desordenado e possui apenas os endereços do Rio de Janeiro, pois o arquivo cep.dat original era muito grande.
+
+Primeiro você cria um índice.dat ordenado com o criaIndice.c e depois você busca pelo seu Cep usando buscaEmIndice.c
