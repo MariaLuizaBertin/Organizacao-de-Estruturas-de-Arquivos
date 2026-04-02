@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define nMeio 2
-
 typedef struct {
     char logradouro[72];
     char bairro[72];
@@ -36,12 +34,12 @@ int main(){
     rewind(f);
     printf("Quantidade total de Registro: %d\n",tam);
 
-    qtBloco = tam/nMeio;
-    sobra = tam % nMeio;
+    qtBloco = tam/2;
+    sobra = tam % 2;
     buffer = malloc((qtBloco+1)*sizeof(Endereco));
     
     // arquivo original em 2 menores 
-    for(int i=0;i<nMeio ; i++) {
+    for(int i=0;i<2 ; i++) {
         long qtdB = (i<sobra? qtBloco+1: qtBloco);
 
         fread(buffer,sizeof(Endereco),qtdB,f); 
