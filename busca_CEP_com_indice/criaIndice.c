@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
     printf("Tamanho da Estrutura: %ld\n\n", sizeof(Endereco));
 
     // Abre arquivo de dados
-    f = fopen("../dados/cep_rj.dat", "rb");
+    f = fopen("../dados/cep.dat", "rb");
     if (f == NULL) {
         printf("Erro ao abrir cep_rj.dat\n");
         return 1;

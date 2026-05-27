@@ -31,7 +31,7 @@ int main(int argc, char**argv)
 	c = 0;
 	printf("Tamanho da Estrutura: %ld\n\n", sizeof(Endereco));
 	// Abre o arquivo para leitura em modo binário
-	f = fopen("../dados/cep_rj_ordenado.dat","rb");
+	f = fopen("../dados/cep_ordenado.dat","rb");
 	fseek(f,0,SEEK_END);
 	long tamanhoBytes = ftell(f);
 	long tamanhoRegistros = tamanhoBytes/sizeof(Endereco);

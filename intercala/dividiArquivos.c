@@ -24,9 +24,9 @@ int main(){
     char nomeArq[80];
     long tamBytes, tam, qtBloco, sobra;
     
-    f = fopen("../dados/cep_rj.dat","rb");
+    f = fopen("../dados/cep.dat","rb");
     if(f == NULL){
-        printf("Erro ao abrir arquivo cep_rj.dat.\n");
+        printf("Erro ao abrir arquivo cep.dat.\n");
         return 1;
     }
 
@@ -57,6 +57,6 @@ int main(){
     free(buffer);
     fclose(f);
 
-    printf("O arquivo cep-rj.dat foi dividido em %d arquivos menores",nPartes);
+    printf("O arquivo cep.dat foi dividido em %d arquivos menores",nPartes);
     return 0;
 }
