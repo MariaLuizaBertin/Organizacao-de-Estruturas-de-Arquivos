@@ -17,6 +17,14 @@ int main(int argc, char **argv) {
   ArvoreB *a = ArvoreB_Abre("arvore.dat");
   Endereco e;
   FILE *f = fopen("cep-1.dat", "rb");
+
+  // Verifica argumento
+  if (argc < 1) {
+      fprintf(stderr, "USO: %s\n", argv[0]);
+      fprintf(stderr, "Antes execute o programa aleatorizaCep.\n");
+      return 1;
+  }
+  
   char chave[TAM_CHAVE + 1];
   long posicao = 0;
   int qtd;

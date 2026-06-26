@@ -35,12 +35,18 @@ int main(int argc, char **argv) {
     Endereco e;
     int qt;
 
+    // Verifica argumento
+    if (argc < 1) {
+        fprintf(stderr, "USO: %s\n", argv[0]);
+        return 1;
+    }
+
     printf("Tamanho da Estrutura: %ld\n\n", sizeof(Endereco));
 
     // Abre arquivo de dados
     f = fopen("../dados/cep.dat", "rb");
     if (f == NULL) {
-        printf("Erro ao abrir cep_rj.dat\n");
+        printf("Erro ao abrir cep_rj.dat\nVerifique se o arquivo existe e se o caminho está correto.\n");
         return 1;
     }
 
@@ -91,7 +97,7 @@ int main(int argc, char **argv) {
         fclose(f);
         return 1;
     }
-
+    printf("Arquivo de saida: indice.dat\n");
     fwrite(a, sizeof(indiceEndereco), tamanhoRegistros, s);
 
     printf("Total Lido: %d\n", i);

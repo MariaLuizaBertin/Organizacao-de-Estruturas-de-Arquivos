@@ -18,15 +18,21 @@ int compara(const void *e1, const void *e2) {
     return strncmp(((Endereco*)e1)->cep, ((Endereco*)e2)->cep, 8);
 }
 
-int main(){
+int main(int argc, char** argv){
     FILE *f,*saida;
     Endereco ea,eb, *buffer;
     char nomeArq[80];
     long tamBytes, tam, qtBloco, sobra;
+
+    // Verifica argumento
+    if (argc < 1) {
+        fprintf(stderr, "USO: %s\n", argv[0]);
+        return 1;
+    }
     
     f = fopen("../dados/cep.dat","rb");
     if(f == NULL){
-        printf("Erro ao abrir arquivo cep.dat.\n");
+        fprintf(stderr, "Erro ao abrir arquivo cep.dat.\n");
         return 1;
     }
 
@@ -34,12 +40,17 @@ int main(){
     tamBytes = ftell(f);
     tam = tamBytes / sizeof(Endereco);
     rewind(f);
-    printf("Quantidade total de Registro: %d\n",tam);
+    printf("Quantidade total de Registro: %ld\n",tam);
 
     qtBloco = tam/nPartes;
     sobra = tam % nPartes;
     buffer = malloc((qtBloco+1)*sizeof(Endereco));
     
+    if (buffer == NULL) {
+        printf("Erro de alocacao de memoria.\n");
+        fclose(f);
+        return 1;
+    }
     // arquivos menores sendo ordenados 
     for(int i=0;i<nPartes ; i++) {
         long qtdB = (i<sobra? qtBloco+1: qtBloco);

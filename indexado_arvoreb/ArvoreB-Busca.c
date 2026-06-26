@@ -266,6 +266,12 @@ void ArvoreB_PrintDebug(ArvoreB* arvore)
 int main(int argc, char** argv)
 {
     ArvoreB* a = ArvoreB_Abre("arvore.dat");
+    // Verifica argumento
+    if (argc < 2) {
+        fprintf(stderr, "USO: %s [CEP]\n", argv[0]);
+        fprintf(stderr, "Antes execute o programa joinArvoreBcomCep.\n");
+        return 1;
+    }
     char chave[TAM_CHAVE+1];
     long posicao;
     sprintf(chave,"%08d",atoi(argv[1]));

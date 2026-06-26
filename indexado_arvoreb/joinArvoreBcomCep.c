@@ -20,6 +20,13 @@ int main(int argc, char **argv) {
   Endereco e;
   long posicao;
 
+  // Verifica argumento
+  if (argc < 1) {
+    fprintf(stderr, "USO: %s\n", argv[0]);
+    fprintf(stderr, "Antes execute o programa criaArvore.\n");
+    return 1;
+  }
+
   while (fread(&e, sizeof(Endereco), 1, f) > 0) {
     posicao = ArvoreB_Busca(a, e.cep); // Existe na árvore
     if (posicao != -1) {

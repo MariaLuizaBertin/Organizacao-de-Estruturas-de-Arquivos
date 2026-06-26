@@ -25,14 +25,16 @@ int main(int argc, char **argv) {
 
     // Verifica argumento
     if (argc < 2) {
-        printf("Uso: %s CEP\n", argv[0]);
+        fprintf(stderr, "USO: %s [CEP]\n", argv[0]);
+        fprintf(stderr, "Antes execute o programa criaIndice.\n");
         return 1;
     }
 
     // Abre arquivo de índice
     fi = fopen("indice.dat", "rb");
     if (fi == NULL) {
-        printf("Erro ao abrir indice.dat\n");
+        fprintf(stderr, "Erro ao abrir indice.dat\n");
+        fprintf(stderr, "Antes execute o programa criaIndice.\n");
         return 1;
     }
 

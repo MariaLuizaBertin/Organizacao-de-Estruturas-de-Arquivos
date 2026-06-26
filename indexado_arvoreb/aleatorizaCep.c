@@ -14,9 +14,16 @@ struct _Endereco {
   char lixo[2];
 };
 
-int main() {
+int main(int argc, char** argv) {
   Endereco e;
   int qt;
+
+  // Verifica argumento
+  if (argc < 1) {
+    fprintf(stderr, "USO: %s\n", argv[0]);
+    return 1; 
+  }
+  
   FILE *f = fopen("../dados/cep.dat", "rb");
   if (!f) {
     fprintf(stderr, "Erro ao abrir o arquivo 'cep.dat'.\n");

@@ -31,7 +31,7 @@ void intercala(const void *arq1, const void *arq2,const void *arqS){
 	s = fopen(arqS, "wb");
 
 	if(a == NULL || b == NULL || s == NULL){
-        printf("Erro ao abrir 1 ou mais arquivos.\n");
+        fprintf(stderr, "Erro ao abrir 1 ou mais arquivos.\n");
         return;
     }
 
@@ -78,6 +78,13 @@ int main(int argc, char** argv)
 	int num_arquivos = nPartes;
 	int rodada =0;
 	char final[80];
+
+	// Verifica argumento
+    if (argc < 1) {
+        fprintf(stderr, "Uso: %s\n", argv[0]);
+		fprintf(stderr, "Antes execute o programa dividiArquivos.\n");
+        return 1;
+    }
 
 	// enquanto houver mais de 1 arquivo, continuar intercalando
 	while(num_arquivos>1)

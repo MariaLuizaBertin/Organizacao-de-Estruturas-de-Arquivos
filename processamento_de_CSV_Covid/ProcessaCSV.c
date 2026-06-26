@@ -22,11 +22,17 @@ void callback(char** cols, int ncols, void* userData) {
 // DESAFIO: numero total de casos e mortes na america do sul
 // colunas do ARQ=> 1-regiao, 5-caso, 8-morte
 // compilar: gcc Teste2.c CSVParser.c
-int main() {    
+int main(int argc, char** argv) {    
     int qt;
     Dados dados = {0, 0};
     unsigned int total = 0;
     char* buf = (char*) malloc(READ_BUF_SIZE);
+
+    // Verifica argumento
+    if (argc < 1) {
+        fprintf(stderr, "USO: %s\n", argv[0]);
+        return 1;
+    }
 
     CSVParser csv;
     CSVParser_init(&csv);
