@@ -35,7 +35,7 @@ Eles devem ser colocados na pasta *dados* após o download.
    git clone https://github.com/MariaLuizaBertin/Organizacao-de-Estruturas-de-Arquivos.git
 ```
 ### Busca Binária 
-Implementa busca binária diretamente sobre um arquivo ordenado.
+Implementa busca binária diretamente sobre um arquivo ordenado. Entre na pasta:
 ```bash
 cd busca_binaria_Cep
 ```
